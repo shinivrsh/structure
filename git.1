@@ -1,0 +1,43 @@
+#include<stdio.h>
+struct node
+{
+    int d1;
+    int d2;
+    struct node *link;
+};
+int main()
+{
+struct node f1;
+f1.link=NULL;
+f1.d1=10;
+f1.d2=20;
+struct node f2;
+f2.link=NULL;
+f2.d1=30;
+f2.d2=40;
+struct node f3;
+f3.link=NULL;
+f3.d1=50;
+f3.d2=60;
+struct node f4;
+f4.d1=70;
+f4.d2=80;
+
+f1.link=&f2;
+printf("%d ",f1.link->d1);
+printf("%d",f1.link->d2);
+
+f2.link=&f3;
+printf("\n%d ",f2.link->d1);
+printf("%d",f2.link->d2);
+
+f3.link=&f4;
+printf("\n%d ",f3.link->d1);
+printf("%d",f3.link->d2);
+
+f4.link=&f1;
+printf("\n%d ",f4.link->d1);
+printf("%d",f4.link->d2);
+
+return 0;
+}
